@@ -35,7 +35,7 @@
 
 #include<iostream>
 using namespace std;
-void nLetterTriangle(int n) {
+void alphaRamp(int n) {
     // Write your code here.
     
     for(int i=n; i>=1; i--){
@@ -50,6 +50,6 @@ void nLetterTriangle(int n) {
 int main(){
     int n;
     cin>>n;
-    nLetterTriangle(n);
+    alphaRamp(n);
 
 }
