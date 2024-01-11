@@ -38,11 +38,13 @@ using namespace std;
 void alphaRamp(int n) {
     // Write your code here.
     
-    for(int i=n; i>=1; i--){
-        char letter='A';
-        for(int j=1; j<=i; j++){
-            cout<<letter<<" ";
-            letter++;
+    for(int i=0; i<n; ++i)
+    {
+        char letter ='A'+i;
+        for(int j=0; j<=i; ++j)
+        {
+            cout<<letter<<' '; 
+               
         }
         cout<<endl;
     }
