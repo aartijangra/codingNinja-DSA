@@ -31,4 +31,34 @@
 // }
 
 
+#include<iostream>
+#include<math.h>
+using namespace std;
+bool checkArmstrong(int n){
+	//Write your code here
+    int temp=n;
+    int org=n;
+    int count=0;
+    int ans=0;
+    while(n>0){
+        count++;
+        n=n/10;
+    }
+    while(temp>0){
+        ans+= pow(temp%10 , count);
+        temp/=10;
 
+    }
+    if(org==ans){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+}
+int main(){
+    int n;
+    cin>>n;
+    checkArmstrong(n);
+}
