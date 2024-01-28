@@ -30,15 +30,30 @@
 using namespace std;
 
 vector<int> printNos(int x) {
-    // Write Your Code Here
-    if(x==1) return{1};
-    vector<int> v = printNos(x-1);
-    v.push_back(x);
-    return v;
-}
-int main(){
-    int x;
-    cin>>x;
-    printNos(x);
+   if (x == 1) {
+       // Base case: When x reaches 1, return 1 in vector
+       return {1};
+   } 
+       // Recursive case:
 
+       // 1. Get the numbers from x-1 recursively
+       vector<int> result = printNos(x - 1);
+       result.push_back(x);
+
+       return result;
+   
 }
+
+int main() {
+   int n;
+   cin >> n;
+   vector<int> numbers = printNos(n);
+   for (int num : numbers) {
+       cout << num << " ";
+   }
+   cout << endl;
+
+   return 0;
+}
+
+
