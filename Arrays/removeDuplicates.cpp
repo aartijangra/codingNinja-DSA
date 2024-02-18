@@ -31,6 +31,29 @@
 // Where ‘arr[i]’ is the value of elements of the array.
 
 // Time limit: 1 sec
+/*
+//brute force approach 
+#include<set>
+int removeDuplicates(vector<int> &arr, int n) {
+	// Write your code here.
+  set<int> s;
+  for(int i=0; i<n; i++){
+    
+    s.insert(arr[i]);
+  }
+  
+  int index =0;
+  for(auto it: s){
+    arr[index] = it;  //one by one every number of set is getting added to arr
+    index ++;
+  }
+  return s.size();
+  
+}
+
+*/
+
+
 #include<bits/stdc++.h>
 using namespace std;
 int removeDuplicates(vector<int> &arr, int n) {
