@@ -36,7 +36,7 @@
 // 1 <= 'arr'[i] <= 10^9
 // 1 <= 'k' < 'n'
 
-/*
+
 //brute force approach
 #include <iostream>
 using namespace std;
@@ -75,12 +75,12 @@ int main()
   return 0;
 }
 
-*/
+
 //optimal approach
 #include <bits/stdc++.h>
 using namespace std;
 void reverse(vector<int>arr, int start, int end){
-    while(start<+end){
+    while(start<=end){
         int temp = arr[start];
         arr[start] = arr[end];
         arr[end] = temp;

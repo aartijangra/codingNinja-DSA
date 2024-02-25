@@ -45,24 +45,25 @@
 
 //brute force approach
 
-// #include <bits/stdc++.h> 
-// vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
-// {
-// 	// Write your code here.
-// 	vector<int> ans;
-// 	int visited[m] = {0};
-// 	for(int i=0; i<n; i++){
-// 		for(int j=0; j<m; j++){
-// 			if(arr1[i] == arr2[j]  &&  visited[j] == 0){
-// 				ans.push_back(arr1[i]);
-// 				visited[j] =1;
-// 				break;
-// 			}
-// 			if(arr2[j] > arr1[i]) break;
-// 		}
-// 	}
-// 	return ans;
-// }
+#include <bits/stdc++.h> 
+using namespace std;
+vector<int> findArrayIntersection(vector<int> &arr1, int n, vector<int> &arr2, int m)
+{
+	// Write your code here.
+	vector<int> ans;
+	int visited[m] = {0};
+	for(int i=0; i<n; i++){
+		for(int j=0; j<m; j++){
+			if(arr1[i] == arr2[j]  &&  visited[j] == 0){
+				ans.push_back(arr1[i]);
+				visited[j] =1;
+				break;
+			}
+			if(arr2[j] > arr1[i]) break;
+		}
+	}
+	return ans;
+}
 
 //optimal approach
 #include <bits/stdc++.h> 

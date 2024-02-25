@@ -37,26 +37,27 @@
 
 
 // //brute force approach
-
-// vector<int> moveZeros(int n, vector<int> a) {
-//     // Write your code here
-//     vector<int> temp;
-//     for(int i=0; i<n; i++){
-//         if(a[i] != 0){
-//             temp.push_back(a[i]);
-//         }
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> moveZeros(int n, vector<int> a) {
+    // Write your code here
+    vector<int> temp;
+    for(int i=0; i<n; i++){
+        if(a[i] != 0){
+            temp.push_back(a[i]);
+        }
         
-//     }
+    }
 
-//     for(int i=0; i<temp.size(); i++){
-//         a[i]=temp[i];
-//     }
+    for(int i=0; i<temp.size(); i++){
+        a[i]=temp[i];
+    }
 
-//     for(int i=temp.size(); i<n; i++){
-//         a[i]=0;
-//     }
-//     return a;
-// }
+    for(int i=temp.size(); i<n; i++){
+        a[i]=0;
+    }
+    return a;
+}
 
 //optimal approach
 #include<bits/stdc++.h>
@@ -78,4 +79,32 @@ vector<int> moveZeros(int n, vector<int> a) {
         }
     }
     return a;
+}
+
+
+//Moore's voting algorithm
+//optimal approach
+int majorityElement(vector<int> v) {
+	int n= v.size();
+	int cnt=0;
+	int el;
+	for(int i=0; i<n; i++){
+		if(cnt==0){
+			el = v[i];
+			cnt =1;
+		}
+		else if(v[i] == el){
+			cnt++;
+		}
+		else{
+			cnt--;
+		}
+	}
+	int cnt1=0;
+	for(int i=0; i<n; i++){
+		if(v[i] == el) cnt1++;
+	}
+
+	if(cnt1 > n/2) return el;
+	else return -1;
 }

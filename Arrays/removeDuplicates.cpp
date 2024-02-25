@@ -31,9 +31,10 @@
 // Where ‘arr[i]’ is the value of elements of the array.
 
 // Time limit: 1 sec
-/*
+
 //brute force approach 
-#include<set>
+#include<bits/stdc++.h>
+using namespace std;
 int removeDuplicates(vector<int> &arr, int n) {
 	// Write your code here.
   set<int> s;
@@ -51,9 +52,9 @@ int removeDuplicates(vector<int> &arr, int n) {
   
 }
 
-*/
 
 
+//optimal approach
 #include<bits/stdc++.h>
 using namespace std;
 int removeDuplicates(vector<int> &arr, int n) {

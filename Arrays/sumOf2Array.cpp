@@ -100,3 +100,39 @@ vector<int> findArraySum(vector<int>&a, int n, vector<int>&b, int m) {
 	return reverse(result);
 
 }
+
+
+//second approach
+#include <bits/stdc++.h> 
+using namespace std;
+
+vector<int> findArraySum(vector<int>&a, int n, vector<int>&b, int m) {
+	// Write your code here.
+	int i = n-1;
+	int j = m-1;
+	int carry = 0;
+	vector<int> result;
+
+	//for same size and no carry arrays
+	while(i>=0 || j>=0 || carry>0){
+		int sum =  carry;
+		if(i>=0){
+			sum += a[i];
+			i--;
+		}
+		if(j>=0){
+			sum+=b[j];
+			j--;
+		}
+
+		carry = sum/10;
+		sum = sum%10;
+		result.push_back(sum);
+		
+		
+	}
+
+	 reverse(result.begin(),result.end());
+	 return result;
+
+}
