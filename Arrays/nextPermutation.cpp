@@ -33,6 +33,25 @@
 // 1 <= n <= 100
 // 1 <= a[ i ] <= 100
 // Time Limit: 1 sec
+
+//by using STL
+#include<iostream>
+#include<vector>
+#include<algorithm>
+
+using namespace std;
+
+int main() {
+    int arr[] = {1,3,2};
+    
+    next_permutation(arr,arr+3);//using in-built function of C++
+    
+    cout<<arr[0]<<" "<<arr[1]<<" "<<arr[2];
+    
+    return 0;
+}
+
+//optimal aproach
 #include<bits/stdc++.h>
 using namespace std;
 vector<int> nextGreaterPermutation(vector<int> &A) {
@@ -49,8 +68,8 @@ vector<int> nextGreaterPermutation(vector<int> &A) {
         reverse(A.begin() , A.end());
         return A;
     } 
-
-    for(int i=n-1; i>=ind; i--){
+    else{
+        for(int i=n-1; i>=ind; i--){
         if(A[i] > A[ind]){
             swap(A[i],A[ind]);
             break;
@@ -58,6 +77,9 @@ vector<int> nextGreaterPermutation(vector<int> &A) {
     }
     //reverse(A,ind+1,n-1);
     reverse(A.begin()+ind+1 , A.end());
+
+    }
+    
     return A;
 }
 
