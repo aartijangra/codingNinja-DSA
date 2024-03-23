@@ -51,6 +51,8 @@ int main() {
     return 0;
 }
 
+
+
 //optimal aproach
 #include<bits/stdc++.h>
 using namespace std;
