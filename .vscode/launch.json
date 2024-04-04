@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Aarti Jangra/Desktop/codingNinja-DSA",
-      "program": "c:/Users/Aarti Jangra/Desktop/codingNinja-DSA/build/Debug/outDebug",
+      "cwd": "d:/Developer/codingNinja-DSA",
+      "program": "d:/Developer/codingNinja-DSA/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
