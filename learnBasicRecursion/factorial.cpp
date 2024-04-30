@@ -9,8 +9,6 @@
 
 // The factorial number is a factorial of a positive integer, like 24 is a factorial number, as it is a factorial of 4.
 
-
-
 // Note:
 // In the output, you will see the array returned by you.
 // Example:
@@ -48,25 +46,39 @@
 // 1 <= n <= 10^18
 
 // Time Limit: 1-sec
+
+
 #include<bits/stdc++.h>
 using namespace std;
-vector<long long> factorialNumbers(long long n) {
-    // Write Your Code Here
-    vector<long long> result;
-    long long int fact=1, i=2;
-    while(fact<=n){
-        result.push_back(fact);
-        fact*=i;
-        i++;
+
+long long factorial(long long n){
+    if(n==0 || n==1) return 1;
+    else{
+        return n*factorial(n-1);
     }
-    return result;
-    
 }
+
+vector<long long> factorialNumbers(long long n)
+{
+    // Write your code here
+    vector<long long> ans;
+    for(long long i=1; i<=n; i++){
+        if(factorial(i)<=n){
+            ans.push_back(factorial(i));
+        }
+        else{
+            break;
+        }
+    }
+    return ans;
+}
+
 int main(){
-    int n;
+    long long n;
     cin>>n;
-    vector<long long> result= factorialNumbers(n);
-    for(auto it: result){             //to print a vector
+    vector<long long> result = factorialNumbers(n);
+    for(auto it: result){
         cout<<it<<" ";
     }
+    return 0;
 }
